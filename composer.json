@@ -1,0 +1,21 @@
+{
+    "name": "yourmusicbot/api-client",
+    "description": "This is the official api client for the YourMusicBot API.",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "6.3.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Basti",
+            "email": "info@yourmusicbot.eu"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "YourMusicBotAPI\\": "src/"
+        }
+    }
+}
