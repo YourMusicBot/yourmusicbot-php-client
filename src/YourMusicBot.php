@@ -34,9 +34,9 @@ class YourMusicBot
 
         if (!is_array($parameters)) throw new InvalidArgumentException();
         
-        $parameters['apiToken'] = $this->apiToken ? $this->apiToken : $_ENV['YMB_API_TOKEN'];
+        $parameters['apiToken'] = $this->apiToken ? $this->apiToken : env('YMB_API_TOKEN');
 
-        if (empty($this->apiToken ? $this->apiToken : $_ENV['YMB_API_TOKEN'])) throw new InvalidArgumentException();
+        if (empty($this->apiToken ? $this->apiToken : env('YMB_API_TOKEN'))) throw new InvalidArgumentException();
        
         return $this->getWebClient()->post($fullURL, [
             'verify' => false,

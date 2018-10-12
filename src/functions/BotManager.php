@@ -12,9 +12,7 @@ class BotManager
     }
 
     public function createBot() {
-        $createBot = $this->core->webCall('products/musicbot/buy');
-        $createBot = get_object_vars($createBot);
-        return $createBot["success"] == "false" ? "Error: ".$createBot["message"] : $createBot["botId"];
+        return $this->core->webCall('products/musicbot/buy');
     }
 
     public function startBot($id) {
@@ -52,6 +50,25 @@ class BotManager
         ];
         
         return $this->core->webCall('products/musicbot/settings', $parameters);
+    }
+
+    public function getBotStatus($id)
+    {
+        $parameters = [
+            'botId' => $id,
+        ];
+        
+        return $this->core->webCall('products/musicbot/status', $parameters);
+    }
+
+    
+    public function getBotStations($id)
+    {
+        $parameters = [
+            'botId' => $id,
+        ];
+        
+        return $this->core->webCall('products/musicbot/stations', $parameters);
     }
 
     // type = radio, other
